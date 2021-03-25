@@ -1,6 +1,6 @@
 class Processo:
     
-    def __init__(self, descricao, custo, decisao, cod):
+    def __init__(self, descricao, custo, decisao, status, cod):
         self._descricao = descricao
         self._custo = custo
         self._decisao = decisao
@@ -33,6 +33,19 @@ class Processo:
 
     def set_status(self, novo_status):
         self._status = novo_status
+
+    def get_cod(self):
+        return self._cod
+
+    def set_cod(self, novo_cod):
+        self._status = novo_cod
+
+
+    def get_prox(self):
+        return self._prox
+    
+    def set_prox(self, novo):
+        self._prox = novo
 
     #OUTROS METODOS
     def incrementa_custo(self):
