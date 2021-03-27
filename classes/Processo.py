@@ -8,6 +8,9 @@ class Processo:
         self._cod = cod
         self._prox = None
 
+    def __str__(self):
+        return f'Código: {self.get_cod()}\nDescrição: {self.get_descricao()}\nCusto: R${self.get_custo()}\nDecisão: {self.get_decisao()}\nStatus: {self.get_status()}\n' 
+
     # GETTER AND SETTERS
 
     def get_descricao(self):
@@ -39,7 +42,6 @@ class Processo:
 
     def set_cod(self, novo_cod):
         self._status = novo_cod
-
 
     def get_prox(self):
         return self._prox

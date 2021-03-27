@@ -25,28 +25,51 @@ class Advogado:
         
     # OUTROS METODOS - LISTA   
     def maior_custo(self):
-        pass
-
+        custo = 0
+        status = ""
+        cont = 0
+        p = processosL.inicio()
+        while (cont != processosL.tamanho()) and p!= None:
+            if( p.get_custo() > custo):
+                custo =  p.get_custo()
+                status = p.get_status()
+            p = p.get_prox()
+        return f'Custo: R${custo}\nStatus: {status}.'
+    
     def menor_custo(self):
-        pass
+        custo = 1000000
+        status = ""
+        cont = 0
+        p = processosL.inicio()
+        while (cont != processosL.tamanho()) and p!= None:
+            if( p.get_custo() < custo):
+                custo =  p.get_custo()
+                status = p.get_status()
+            p = p.get_prox()
+        return f'Custo: R${custo}\nStatus: {status}.'
 
     def incrementa_custo_processo(self, cod, valor):
-        pass
+        #Falta testar
+        processo = self._processosL.busca_processo()
+        processo.incrementa_custo(valor)
+        self.busca_processo(cod)
 
     def busca_processo(self, cod):
-        pass
+        #Falta testar
+        #Existem dois buscadores de processo, um utiliza só o cod, o outro cod e posicao
+        self._processosL.busca_processo(cod)
 
     def ordena_processos(self):
         pass
 
     def imprimir_processos(self):
-        pass
+        self._processosL.imprimir()
 
-    def adicionar_processo_L(self, novo_processo, posicao):
-        pass
+    def adicionar_processo_L(self, descricao, custo, decisao, status, cod, posicao):
+        self._processosL.adicionar(descricao, custo, decisao, status, cod)
 
     def remover_processo_L(self, posicao):
-        pass
+        return self._processosL.remover(posicao)
 
     def mostrar_tam_processosL(self):
         return self._processosL.tamanho()
@@ -54,6 +77,7 @@ class Advogado:
 
     # OUTROS METODOS - PILHA
     def adicionar_processo_P(self, descricao, custo, decisao, status, cod):
+        # novo_processo = Pilha()
         self._processosP.adicionar(descricao, custo, decisao, status, cod)
 
     def remover_processo_P(self):
