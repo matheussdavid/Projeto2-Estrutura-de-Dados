@@ -1,6 +1,6 @@
 valorMenu = 9999
 while valorMenu != 0:
-    print('--------------------- SysJurídico v12.00 -----------------------------')
+    print('--------------------- SysJurídico v12.01 -----------------------------')
     print('----------------------------- MENU -----------------------------------\n')
     print('1 - Impressão teste')
     print('2 - Listar os advogados')
@@ -10,7 +10,7 @@ while valorMenu != 0:
     print('----------------------------------------------------------------------\n')
     valorMenu = int(input('Informe o número corresponde ao que deseja realizar: '))
     if valorMenu == 1:
-        imp_teste()
+        print("Teste")
         valorMenu = int(input('Deseja voltar ao menu? Digite 1 para voltar ao Menu e 0 para encerrar: '))
     elif valorMenu == 2 :
         cod_adv = input('Informe o código do advogado (Ex: OAB-DF 222.222): ')

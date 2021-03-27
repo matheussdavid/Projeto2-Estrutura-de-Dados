@@ -48,5 +48,5 @@ class Processo:
         self._prox = novo
 
     #OUTROS METODOS
-    def incrementa_custo(self):
-        pass
+    def incrementa_custo(self, novo_custo):
+        self._custo += novo_custo

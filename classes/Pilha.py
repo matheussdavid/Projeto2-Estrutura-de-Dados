@@ -55,22 +55,3 @@ class Pilha:
   #   if self.vazia():
   #     raise PilhaException('A pilha está vazia')
   #   self._topo.dado = novoValor
-
-
-if __name__ == '__main__':
-  p = Pilha()
-
-
-
-p.adicionar("Calunia", 1000, "favorável", "deferido","001")
-p.adicionar("Calunia", 1000, "favorável", "deferido","002")
-p.adicionar("Calunia", 1000, "favorável", "deferido","003")
-p.adicionar("Calunia", 1000, "favorável", "deferido","004")
-
-
-
-p.remover()
-print(p)
-
-p.remover()
-print(p)
