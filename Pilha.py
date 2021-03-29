@@ -22,8 +22,7 @@ class Pilha:
   def tamanho(self):
     return self._tamanho
   
-  def adicionar(self, descricao, custo, decisao, status, cod):
-    processo = Processo(descricao, custo, decisao, status, cod)
+  def adicionar(self, processo):
     processo.set_prox(self._topo)
     self._topo = processo
     self._tamanho += 1
@@ -49,9 +48,12 @@ class Pilha:
     return saida
 
   def imprimir(self):
-    print(self.__str__())
+        saida = '---- PROCESSOS ----\n\n'
+        p = self._topo
+        while p != None:
+            saida += f'{p.get_descricao(), p.get_custo(), p.get_decisao(), p.get_status(), p.get_cod()}'
+            p = p.get_prox()
+            if p != None:
+                saida += '\n'
+        return saida
   
-  # def modificar(self, novoValor):
-  #   if self.vazia():
-  #     raise PilhaException('A pilha está vazia')
-  #   self._topo.dado = novoValor
